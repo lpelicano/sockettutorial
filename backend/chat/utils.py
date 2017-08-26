@@ -31,7 +31,6 @@ def get_room_or_error(room_id, user):
 		raise ClientError("USER_HAS_TO_LOGIN")
 
 	# Find the room they requested (by id)
-
 	try: 
 		room = Room.objects.get(pk=room_id)
 	except RoomDoesNotExist: 
@@ -41,7 +40,7 @@ def get_room_or_error(room_id, user):
 	if room.staff_only and not user.is_staff:
 		raise ClientError("ROOM_ACCESS_DENIED")
 
-	return Room
+	return room
 
 
 

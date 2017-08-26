@@ -1,4 +1,15 @@
 body {
-	background-color: black;
-	color: white;
+
+}
+
+.room-link {
+    border: 1px solid;
+    border-color: black;
+    margin: 10px 5px;
+    padding: 10px 10px;
+}
+
+.joined {
+    background-color: orange;
+    color: white;
 }
