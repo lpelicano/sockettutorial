@@ -69,6 +69,7 @@ def chat_join(message):
 	message.reply_channel.send({
 		"text": json.dumps({
 			"join": str(room.id),
+			"title": "Room " + str(room.id),
 			}),
 	})
 
@@ -98,7 +99,7 @@ def chat_leave(message):
 @catch_client_error
 def chat_send(message):
 
-	if int(message["room"] not in message.channel_session['rooms']):
+	if int(message["room"]) not in message.channel_session['rooms']:
 		raise ClientError("ROOM_ACCESS_DENIED")
 
 	room = get_room_or_error(message["room"], message.user)

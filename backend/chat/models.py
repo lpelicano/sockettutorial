@@ -27,6 +27,8 @@ class Room(models.Model):
 
 		'''
 
+		print("SELF ID:", self.id)
+
 		final_msg = {
 						'room': str(self.id), 
 						'message': message, 
@@ -36,6 +38,6 @@ class Room(models.Model):
 
 		self.websocket_group.send({
 				'text': json.dumps(final_msg)
-			})
+		})
 
 	
